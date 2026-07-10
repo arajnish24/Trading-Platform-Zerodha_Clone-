@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Signup.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3002';
-const DASHBOARD_URL = process.env.REACT_APP_DASHBOARD_URL || 'http://localhost:3001';
+const API_URL = process.env.REACT_APP_API_URL || 
+  (window.location.port === '3000' ? 'http://localhost:3002' : '');
+const DASHBOARD_URL = process.env.REACT_APP_DASHBOARD_URL || 
+  (window.location.port === '3000' ? 'http://localhost:3001/dashboard' : '/dashboard');
 
 function Signup() {
   const [activeTab, setActiveTab] = useState('signup'); // 'signup' or 'login'

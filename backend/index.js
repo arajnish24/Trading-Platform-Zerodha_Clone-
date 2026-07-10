@@ -1,4 +1,5 @@
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, ".env") });
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -581,7 +582,6 @@ app.post("/withdrawFunds", async (req, res) => {
 });
 
 // Serve static frontend and dashboard build directories
-const path = require("path");
 
 const frontendBuildPath = path.join(__dirname, "../frontend/build");
 const dashboardBuildPath = path.join(__dirname, "../dashboard/build");

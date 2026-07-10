@@ -30,7 +30,7 @@ const Home = () => {
       if (!token) {
         setErrorMessage("Authentication required. Redirecting to login...");
         setTimeout(() => {
-          window.location.href = `${FRONTEND_URL}/Signup`;
+          window.location.href = `${FRONTEND_URL}/signup`;
         }, 1500);
         return;
       }
@@ -50,7 +50,7 @@ const Home = () => {
         localStorage.removeItem("username");
         setErrorMessage("Session expired. Redirecting to login...");
         setTimeout(() => {
-          window.location.href = `${FRONTEND_URL}/Signup`;
+          window.location.href = `${FRONTEND_URL}/signup`;
         }, 1500);
       } finally {
         setLoading(false);

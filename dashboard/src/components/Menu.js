@@ -28,7 +28,7 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
-      <img src="logo.png" alt="logo" style={{ width: "50px" }} />
+      <img src={process.env.PUBLIC_URL + "/logo.png"} alt="logo" style={{ width: "50px" }} />
       <div className="menus">
         <ul>
           <li>
